@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import { Box, Button } from '@material-ui/core';
 
 class InfoPage extends PureComponent {
     static propTypes = {}
@@ -26,22 +26,30 @@ class InfoPage extends PureComponent {
     render() {
         return (
             <div>
-                Country Name : {this.state.countryData[0].name}<br/>
-                Capital : {this.state.countryData[0].capital}<br/>
-                Population  : {this.state.countryData[0].population}<br/>
-                latlng : {this.state.countryData[0].latlng}<br/>
-                <img src ={this.state.countryData[0].flag} style={{'height' :'100px'}}/><br/>
+                <a href='/'>Back</a>
+                <div className="countryDetail">
+                    <div className="detailsOnly">
+                        <b>Country Name :</b> {this.state.countryData[0].name}<br/>
+                        <b>Capital :</b> {this.state.countryData[0].capital}<br/>
+                        <b>Population</b>  : {this.state.countryData[0].population}<br/>
+                        <b>latlng</b> : {this.state.countryData[0].latlng}<br/>
+                    </div>
+                    <img src ={this.state.countryData[0].flag} className='imageStyle'/><br/>
 
-                <br/><br/>
-                <div className="weatherInfo">Capital Weather<br/><br/>
-                    Click to find :<br/> <button onClick={this.capitalWeather}> Capital Weather</button>
+                    <br/><br/>
+                    </div>
+
+                <div className="weatherInfo">Capital Weather<br/>
+                    Click to find :<br/> <Button color="primary" variant="contained" onClick={this.capitalWeather}> Capital Weather</Button >
                 </div>
-                {this.state.isweatherData && <div>
-                    <img src= {this.state.weatherData.current.weather_icons[0]}/>
-                    Temperature : {this.state.weatherData.current.temperature}<br/>
-                    Wind Speed : {this.state.weatherData.current.wind_speed}<br/>
-                    Precip : {this.state.weatherData.current.precip} <br/>
-                </div>}
+                <Box color="text.primary" component="span" m={1}>
+                    {this.state.isweatherData && <div className="weatherDetail">
+                        <img className='imageStyle' src= {this.state.weatherData.current.weather_icons[0]}/><br/>
+                        <b>Temperature :</b> {this.state.weatherData.current.temperature}<br/>
+                        <b>Wind Speed :</b> {this.state.weatherData.current.wind_speed}<br/>
+                        <b>Precip :</b> {this.state.weatherData.current.precip} <br/>
+                    </div>}
+                </Box>
             </div>
         )
     }

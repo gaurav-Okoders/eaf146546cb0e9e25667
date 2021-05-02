@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import InfoPage from './InfoPage';
 import PropTypes from 'prop-types'
-import { responsiveFontSizes } from '@material-ui/core'
+import { Button, responsiveFontSizes } from '@material-ui/core'
 
 class Home extends PureComponent {
     static propTypes = {}
@@ -60,13 +60,13 @@ class Home extends PureComponent {
                             onChange={this.handleinputChange}    
                         />
                         <br/>
-                        <button 
+                        <Button color="primary" variant="contained" 
                         type="submit" 
                         id="inputButton"
                         onClick={(e) => this.getCountryDetails(e)} 
                         >
                         Submit
-                        </button>
+                        </Button>
                     </form>
                 </div> : 
                 <div><InfoPage countryData = {this.state.countryData}/></div>}

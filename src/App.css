@@ -17,4 +17,22 @@
 
 .weatherInfo{
   text-align: center;
+  font-size: 160%;
+  padding: 33px;
+}
+
+.countryDetail{
+  display: flex;
+  padding: 10px;
+}
+
+.imageStyle{
+  height: 80px;
+    width: 120px;
+    padding: 10px;
+}
+
+.weatherDetail{
+  padding: 10px;
+  text-align: center;
 }
