@@ -15,16 +15,22 @@ class Home extends PureComponent {
         }
     }
     componentDidMount(){
-        if(document.getElementById("inputButton"))
+        if(document.getElementById("inputButton")){
+            document.getElementById("inputButton").style.color = 'red';
             document.getElementById("inputButton").disabled = true;
+        }
+
     }
 
     handleinputChange = ()=>{
         console.log('REaced',this.myRef.current.value)
         if(this.myRef.current.value.length > 0){
             document.getElementById("inputButton").disabled = false;
+            document.getElementById("inputButton").style.color = 'white';
         }else{
             document.getElementById("inputButton").disabled = true;
+            document.getElementById("inputButton").style.color = 'red';
+
         }
     }
 

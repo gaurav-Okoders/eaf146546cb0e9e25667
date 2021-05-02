@@ -16,9 +16,8 @@
 }
 
 .weatherInfo{
-  text-align: center;
-  font-size: 160%;
-  padding: 33px;
+  padding: 10px;
+  display: flex;
 }
 
 .countryDetail{
